@@ -1,15 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<H2>I'm extending the base template</H2>
-
-{% for task in tasks %}
-{{ task.task_name }} <br>
-{{ task.category_name }}<br>
-{{ task.task_description }}<br>
-{{ task.is_urgent }}<br>
-{{ task.due_date }}<br>
-{% endfor %}
+<h3 class="light-blue-text text-darken-4 center-align">All Tasks</h3>
 
 <ul class="collapsible">
     {% for task in tasks %}
@@ -24,6 +16,7 @@
         <div class="collapsible-body">
             <strong>{{ task.category_name }}</strong>
             <p>{{ task.task_description }}</p>
+            <p><em>by: {{ task.created_by }}</em></p>
         </div>
     </li>
     {% endfor %}
