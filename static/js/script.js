@@ -3,6 +3,11 @@ $(document).ready(function () {
         edge: "right"
     });
 });
+
 $(document).ready(function () {
     $('.collapsible').collapsible();
+});
+
+$(document).ready(function () {
+    $('.tooltipped').tooltip();
 });
