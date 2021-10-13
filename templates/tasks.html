@@ -9,8 +9,10 @@
         <div class="collapsible-header white-text light-blue darken-4 text-shadow">
             <div class="col s3">
                 <i class="fas fa-caret-down"></i>
+                {% if session.user|lower == task.created_by|lower %}
                 <a href="" class="green accent-4 btn-small">Done</a>
                 <a href="{{ url_for('edit_task', task_id=task._id) }}" class="light-blue accent-4 btn-small">Edit</a>
+                {% endif %}
             </div>
             <div class="col s9">
                 <strong>{{ task.task_name }}</strong> : {{ task.due_date }}
