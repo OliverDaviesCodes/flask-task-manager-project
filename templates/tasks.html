@@ -10,7 +10,7 @@
             <div class="col s3">
                 <i class="fas fa-caret-down"></i>
                 {% if session.user|lower == task.created_by|lower %}
-                <a href="" class="green accent-4 btn-small">Done</a>
+                <a href="{{ url_for('delete_task', task_id=task._id) }}" class="green accent-4 btn-small">Done</a>
                 <a href="{{ url_for('edit_task', task_id=task._id) }}" class="light-blue accent-4 btn-small">Edit</a>
                 {% endif %}
             </div>
